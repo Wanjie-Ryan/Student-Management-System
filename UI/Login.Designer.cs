@@ -100,6 +100,7 @@
             btnLogin.TabIndex = 14;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // txtPwd
             // 
