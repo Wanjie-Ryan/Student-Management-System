@@ -1,3 +1,5 @@
+using Student_Management_System.UI;
+
 namespace Student_Management_System
 {
     internal static class Program
