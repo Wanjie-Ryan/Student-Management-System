@@ -21,5 +21,11 @@ namespace Student_Management_System.UI
         {
             this.Close();
         }
+
+        private void btnReg_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+        }
     }
 }

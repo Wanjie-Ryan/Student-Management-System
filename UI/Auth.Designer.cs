@@ -53,6 +53,7 @@
             // 
             // panelAuth
             // 
+            panelAuth.BackColor = Color.Coral;
             panelAuth.Controls.Add(pbClose);
             panelAuth.Controls.Add(lblregHeader);
             panelAuth.Cursor = Cursors.Hand;
@@ -116,6 +117,7 @@
             btnReg.TabIndex = 3;
             btnReg.Text = "Registration";
             btnReg.UseVisualStyleBackColor = false;
+            btnReg.Click += btnReg_Click;
             // 
             // txtPwd
             // 
