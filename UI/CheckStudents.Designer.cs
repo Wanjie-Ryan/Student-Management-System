@@ -33,6 +33,12 @@
             ChecStudentsToolStripMenuItem = new ToolStripMenuItem();
             studentsToolStripMenuItem = new ToolStripMenuItem();
             pbClose = new PictureBox();
+            lblStudentsTitle = new Label();
+            lblStudentname = new Label();
+            lblRegno = new Label();
+            lblGrade = new Label();
+            lblFees = new Label();
+            textBox1 = new TextBox();
             menuStripStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbClose).BeginInit();
             SuspendLayout();
@@ -72,11 +78,69 @@
             pbClose.TabStop = false;
             pbClose.Click += pbClose_Click;
             // 
+            // lblStudentsTitle
+            // 
+            lblStudentsTitle.AutoSize = true;
+            lblStudentsTitle.Location = new Point(488, 44);
+            lblStudentsTitle.Name = "lblStudentsTitle";
+            lblStudentsTitle.Size = new Size(211, 22);
+            lblStudentsTitle.TabIndex = 20;
+            lblStudentsTitle.Text = "Input Fees and Grades";
+            // 
+            // lblStudentname
+            // 
+            lblStudentname.AutoSize = true;
+            lblStudentname.Location = new Point(12, 92);
+            lblStudentname.Name = "lblStudentname";
+            lblStudentname.Size = new Size(132, 22);
+            lblStudentname.TabIndex = 21;
+            lblStudentname.Text = "Student name";
+            // 
+            // lblRegno
+            // 
+            lblRegno.AutoSize = true;
+            lblRegno.Location = new Point(12, 156);
+            lblRegno.Name = "lblRegno";
+            lblRegno.Size = new Size(155, 22);
+            lblRegno.TabIndex = 22;
+            lblRegno.Text = "Registration no.";
+            // 
+            // lblGrade
+            // 
+            lblGrade.AutoSize = true;
+            lblGrade.Location = new Point(12, 216);
+            lblGrade.Name = "lblGrade";
+            lblGrade.Size = new Size(63, 22);
+            lblGrade.TabIndex = 23;
+            lblGrade.Text = "Grade";
+            // 
+            // lblFees
+            // 
+            lblFees.AutoSize = true;
+            lblFees.Location = new Point(12, 289);
+            lblFees.Name = "lblFees";
+            lblFees.Size = new Size(49, 22);
+            lblFees.TabIndex = 24;
+            lblFees.Text = "Fees";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(183, 92);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(172, 29);
+            textBox1.TabIndex = 25;
+            // 
             // CheckStudents
             // 
             AutoScaleDimensions = new SizeF(12F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1200, 495);
+            Controls.Add(textBox1);
+            Controls.Add(lblFees);
+            Controls.Add(lblGrade);
+            Controls.Add(lblRegno);
+            Controls.Add(lblStudentname);
+            Controls.Add(lblStudentsTitle);
             Controls.Add(pbClose);
             Controls.Add(menuStripStudents);
             Font = new Font("Modern No. 20", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -98,5 +162,11 @@
         private ToolStripMenuItem ChecStudentsToolStripMenuItem;
         private ToolStripMenuItem studentsToolStripMenuItem;
         private PictureBox pbClose;
+        private Label lblStudentsTitle;
+        private Label lblStudentname;
+        private Label lblRegno;
+        private Label lblGrade;
+        private Label lblFees;
+        private TextBox textBox1;
     }
 }
