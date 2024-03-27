@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Teacher));
             menuStripTeachers = new MenuStrip();
             assignmentsToolStripMenuItem = new ToolStripMenuItem();
             studentsToolStripMenuItem = new ToolStripMenuItem();
@@ -47,8 +48,10 @@
             btnUpdate = new Button();
             btnClear = new Button();
             btnDelete = new Button();
+            pbClose = new PictureBox();
             menuStripTeachers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridAssignments).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbClose).BeginInit();
             SuspendLayout();
             // 
             // menuStripTeachers
@@ -67,6 +70,7 @@
             assignmentsToolStripMenuItem.Name = "assignmentsToolStripMenuItem";
             assignmentsToolStripMenuItem.Size = new Size(161, 26);
             assignmentsToolStripMenuItem.Text = "Check Students";
+            assignmentsToolStripMenuItem.Click += assignmentsToolStripMenuItem_Click;
             // 
             // studentsToolStripMenuItem
             // 
@@ -227,11 +231,24 @@
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
             // 
+            // pbClose
+            // 
+            pbClose.Cursor = Cursors.Hand;
+            pbClose.Image = (Image)resources.GetObject("pbClose.Image");
+            pbClose.Location = new Point(1088, 0);
+            pbClose.Name = "pbClose";
+            pbClose.Size = new Size(37, 30);
+            pbClose.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbClose.TabIndex = 18;
+            pbClose.TabStop = false;
+            pbClose.Click += pbClose_Click;
+            // 
             // Teacher
             // 
             AutoScaleDimensions = new SizeF(12F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1200, 491);
+            Controls.Add(pbClose);
             Controls.Add(btnDelete);
             Controls.Add(btnClear);
             Controls.Add(btnUpdate);
@@ -259,6 +276,7 @@
             menuStripTeachers.ResumeLayout(false);
             menuStripTeachers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridAssignments).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbClose).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -284,5 +302,6 @@
         private Button btnUpdate;
         private Button btnClear;
         private Button btnDelete;
+        private PictureBox pbClose;
     }
 }

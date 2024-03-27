@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Student_Management_System.UI
 {
-    public partial class Teacher : Form
+    public partial class CheckStudents : Form
     {
-        public Teacher()
+        public CheckStudents()
         {
             InitializeComponent();
-        }
-
-        private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void pbClose_Click(object sender, EventArgs e)
@@ -27,10 +22,10 @@ namespace Student_Management_System.UI
             this.Close();
         }
 
-        private void assignmentsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ChecStudentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CheckStudents checkStudents = new CheckStudents();
-            checkStudents.Show();
+            Teacher teacherForm = new Teacher();
+            teacherForm.Show();
         }
     }
 }
