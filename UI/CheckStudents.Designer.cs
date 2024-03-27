@@ -38,9 +38,20 @@
             lblRegno = new Label();
             lblGrade = new Label();
             lblFees = new Label();
-            textBox1 = new TextBox();
+            txtStudentname = new TextBox();
+            txtRegno = new TextBox();
+            cmbGrade = new ComboBox();
+            txtFees = new TextBox();
+            txtSearch = new TextBox();
+            lblSearch = new Label();
+            dataGridCheckStudents = new DataGridView();
+            btnDelete = new Button();
+            btnClear = new Button();
+            btnUpdate = new Button();
+            btnAdd = new Button();
             menuStripStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbClose).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridCheckStudents).BeginInit();
             SuspendLayout();
             // 
             // menuStripStudents
@@ -123,19 +134,129 @@
             lblFees.TabIndex = 24;
             lblFees.Text = "Fees";
             // 
-            // textBox1
+            // txtStudentname
             // 
-            textBox1.Location = new Point(183, 92);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(172, 29);
-            textBox1.TabIndex = 25;
+            txtStudentname.Location = new Point(183, 92);
+            txtStudentname.Name = "txtStudentname";
+            txtStudentname.Size = new Size(184, 29);
+            txtStudentname.TabIndex = 25;
+            // 
+            // txtRegno
+            // 
+            txtRegno.Location = new Point(183, 156);
+            txtRegno.Name = "txtRegno";
+            txtRegno.Size = new Size(184, 29);
+            txtRegno.TabIndex = 26;
+            // 
+            // cmbGrade
+            // 
+            cmbGrade.FormattingEnabled = true;
+            cmbGrade.Items.AddRange(new object[] { "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-" });
+            cmbGrade.Location = new Point(183, 225);
+            cmbGrade.Name = "cmbGrade";
+            cmbGrade.Size = new Size(184, 30);
+            cmbGrade.TabIndex = 27;
+            // 
+            // txtFees
+            // 
+            txtFees.Location = new Point(183, 289);
+            txtFees.Name = "txtFees";
+            txtFees.Size = new Size(184, 29);
+            txtFees.TabIndex = 28;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(661, 96);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(485, 29);
+            txtSearch.TabIndex = 30;
+            // 
+            // lblSearch
+            // 
+            lblSearch.AutoSize = true;
+            lblSearch.Location = new Point(570, 99);
+            lblSearch.Name = "lblSearch";
+            lblSearch.Size = new Size(71, 22);
+            lblSearch.TabIndex = 29;
+            lblSearch.Text = "Search";
+            // 
+            // dataGridCheckStudents
+            // 
+            dataGridCheckStudents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridCheckStudents.Location = new Point(570, 140);
+            dataGridCheckStudents.Name = "dataGridCheckStudents";
+            dataGridCheckStudents.RowHeadersWidth = 51;
+            dataGridCheckStudents.Size = new Size(576, 237);
+            dataGridCheckStudents.TabIndex = 31;
+            // 
+            // btnDelete
+            // 
+            btnDelete.BackColor = Color.Crimson;
+            btnDelete.Cursor = Cursors.Hand;
+            btnDelete.FlatStyle = FlatStyle.Popup;
+            btnDelete.ForeColor = SystemColors.ButtonHighlight;
+            btnDelete.Location = new Point(369, 376);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(94, 29);
+            btnDelete.TabIndex = 35;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
+            // 
+            // btnClear
+            // 
+            btnClear.BackColor = Color.Khaki;
+            btnClear.Cursor = Cursors.Hand;
+            btnClear.FlatStyle = FlatStyle.Popup;
+            btnClear.ForeColor = SystemColors.ButtonHighlight;
+            btnClear.Location = new Point(250, 376);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(94, 29);
+            btnClear.TabIndex = 34;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = false;
+            // 
+            // btnUpdate
+            // 
+            btnUpdate.BackColor = Color.DarkGoldenrod;
+            btnUpdate.Cursor = Cursors.Hand;
+            btnUpdate.FlatStyle = FlatStyle.Popup;
+            btnUpdate.ForeColor = SystemColors.ButtonHighlight;
+            btnUpdate.Location = new Point(132, 376);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(94, 29);
+            btnUpdate.TabIndex = 33;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = false;
+            // 
+            // btnAdd
+            // 
+            btnAdd.BackColor = Color.Olive;
+            btnAdd.Cursor = Cursors.Hand;
+            btnAdd.FlatStyle = FlatStyle.Popup;
+            btnAdd.ForeColor = SystemColors.ButtonHighlight;
+            btnAdd.Location = new Point(16, 376);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(94, 29);
+            btnAdd.TabIndex = 32;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = false;
             // 
             // CheckStudents
             // 
             AutoScaleDimensions = new SizeF(12F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1200, 495);
-            Controls.Add(textBox1);
+            ClientSize = new Size(1200, 473);
+            Controls.Add(btnDelete);
+            Controls.Add(btnClear);
+            Controls.Add(btnUpdate);
+            Controls.Add(btnAdd);
+            Controls.Add(dataGridCheckStudents);
+            Controls.Add(txtSearch);
+            Controls.Add(lblSearch);
+            Controls.Add(txtFees);
+            Controls.Add(cmbGrade);
+            Controls.Add(txtRegno);
+            Controls.Add(txtStudentname);
             Controls.Add(lblFees);
             Controls.Add(lblGrade);
             Controls.Add(lblRegno);
@@ -152,6 +273,7 @@
             menuStripStudents.ResumeLayout(false);
             menuStripStudents.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbClose).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridCheckStudents).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -167,6 +289,16 @@
         private Label lblRegno;
         private Label lblGrade;
         private Label lblFees;
-        private TextBox textBox1;
+        private TextBox txtStudentname;
+        private TextBox txtRegno;
+        private ComboBox cmbGrade;
+        private TextBox txtFees;
+        private TextBox txtSearch;
+        private Label lblSearch;
+        private DataGridView dataGridCheckStudents;
+        private Button btnDelete;
+        private Button btnClear;
+        private Button btnUpdate;
+        private Button btnAdd;
     }
 }
