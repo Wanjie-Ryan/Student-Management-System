@@ -28,12 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Student";
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Student));
+            panelTopDashboard = new Panel();
+            lblStudentDashboard = new Label();
+            pbClose = new PictureBox();
+            panelTopDashboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbClose).BeginInit();
+            SuspendLayout();
+            // 
+            // panelTopDashboard
+            // 
+            panelTopDashboard.Controls.Add(pbClose);
+            panelTopDashboard.Controls.Add(lblStudentDashboard);
+            panelTopDashboard.Dock = DockStyle.Top;
+            panelTopDashboard.Location = new Point(0, 0);
+            panelTopDashboard.Name = "panelTopDashboard";
+            panelTopDashboard.Size = new Size(1135, 46);
+            panelTopDashboard.TabIndex = 0;
+            // 
+            // lblStudentDashboard
+            // 
+            lblStudentDashboard.AutoSize = true;
+            lblStudentDashboard.Location = new Point(536, 9);
+            lblStudentDashboard.Name = "lblStudentDashboard";
+            lblStudentDashboard.Size = new Size(181, 22);
+            lblStudentDashboard.TabIndex = 0;
+            lblStudentDashboard.Text = "Student Dashboard";
+            // 
+            // pbClose
+            // 
+            pbClose.Cursor = Cursors.Hand;
+            pbClose.Image = (Image)resources.GetObject("pbClose.Image");
+            pbClose.Location = new Point(1069, 9);
+            pbClose.Name = "pbClose";
+            pbClose.Size = new Size(31, 30);
+            pbClose.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbClose.TabIndex = 20;
+            pbClose.TabStop = false;
+            pbClose.Click += pbClose_Click;
+            // 
+            // Student
+            // 
+            AutoScaleDimensions = new SizeF(12F, 22F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1135, 495);
+            Controls.Add(panelTopDashboard);
+            Font = new Font("Modern No. 20", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "Student";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Student";
+            panelTopDashboard.ResumeLayout(false);
+            panelTopDashboard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbClose).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Panel panelTopDashboard;
+        private Label lblStudentDashboard;
+        private PictureBox pbClose;
     }
 }
