@@ -33,8 +33,10 @@
             teacherToolStripMenuItem = new ToolStripMenuItem();
             studentToolStripMenuItem = new ToolStripMenuItem();
             pbDashClose = new PictureBox();
+            pictureBoxSchool = new PictureBox();
             menuStripDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbDashClose).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSchool).BeginInit();
             SuspendLayout();
             // 
             // menuStripDashboard
@@ -44,7 +46,7 @@
             menuStripDashboard.Items.AddRange(new ToolStripItem[] { teacherToolStripMenuItem, studentToolStripMenuItem });
             menuStripDashboard.Location = new Point(0, 0);
             menuStripDashboard.Name = "menuStripDashboard";
-            menuStripDashboard.Size = new Size(1282, 30);
+            menuStripDashboard.Size = new Size(1170, 30);
             menuStripDashboard.TabIndex = 0;
             // 
             // teacherToolStripMenuItem
@@ -63,19 +65,30 @@
             // 
             pbDashClose.Cursor = Cursors.Hand;
             pbDashClose.Image = (Image)resources.GetObject("pbDashClose.Image");
-            pbDashClose.Location = new Point(1175, 0);
+            pbDashClose.Location = new Point(1110, 0);
             pbDashClose.Name = "pbDashClose";
-            pbDashClose.Size = new Size(31, 30);
+            pbDashClose.Size = new Size(47, 30);
             pbDashClose.SizeMode = PictureBoxSizeMode.StretchImage;
             pbDashClose.TabIndex = 3;
             pbDashClose.TabStop = false;
             pbDashClose.Click += pbDashClose_Click;
             // 
+            // pictureBoxSchool
+            // 
+            pictureBoxSchool.Image = (Image)resources.GetObject("pictureBoxSchool.Image");
+            pictureBoxSchool.Location = new Point(281, 92);
+            pictureBoxSchool.Name = "pictureBoxSchool";
+            pictureBoxSchool.Size = new Size(735, 356);
+            pictureBoxSchool.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxSchool.TabIndex = 4;
+            pictureBoxSchool.TabStop = false;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(12F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1282, 600);
+            ClientSize = new Size(1170, 497);
+            Controls.Add(pictureBoxSchool);
             Controls.Add(pbDashClose);
             Controls.Add(menuStripDashboard);
             Font = new Font("Modern No. 20", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -88,6 +101,7 @@
             menuStripDashboard.ResumeLayout(false);
             menuStripDashboard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbDashClose).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSchool).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -98,5 +112,6 @@
         private ToolStripMenuItem teacherToolStripMenuItem;
         private ToolStripMenuItem studentToolStripMenuItem;
         private PictureBox pbDashClose;
+        private PictureBox pictureBoxSchool;
     }
 }
