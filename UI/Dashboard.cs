@@ -16,5 +16,10 @@ namespace Student_Management_System.UI
         {
             InitializeComponent();
         }
+
+        private void pbDashClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

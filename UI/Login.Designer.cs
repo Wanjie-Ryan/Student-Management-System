@@ -48,9 +48,10 @@
             panelLogin.BackColor = Color.Coral;
             panelLogin.Controls.Add(pbClose);
             panelLogin.Controls.Add(lblLogHeader);
-            panelLogin.Location = new Point(2, 2);
+            panelLogin.Dock = DockStyle.Top;
+            panelLogin.Location = new Point(0, 0);
             panelLogin.Name = "panelLogin";
-            panelLogin.Size = new Size(896, 56);
+            panelLogin.Size = new Size(900, 56);
             panelLogin.TabIndex = 0;
             // 
             // pbClose
