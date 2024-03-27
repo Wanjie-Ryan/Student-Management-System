@@ -16,5 +16,10 @@ namespace Student_Management_System.UI
         {
             InitializeComponent();
         }
+
+        private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
