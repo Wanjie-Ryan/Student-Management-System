@@ -21,5 +21,17 @@ namespace Student_Management_System.UI
         {
             this.Close();
         }
+
+        private void teacherToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Teacher teacherForm = new Teacher();
+            teacherForm.Show();
+        }
+
+        private void studentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Student studentForm = new Student();
+            studentForm.Show();
+        }
     }
 }

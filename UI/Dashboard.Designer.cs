@@ -54,12 +54,14 @@
             teacherToolStripMenuItem.Name = "teacherToolStripMenuItem";
             teacherToolStripMenuItem.Size = new Size(95, 26);
             teacherToolStripMenuItem.Text = "Teacher";
+            teacherToolStripMenuItem.Click += teacherToolStripMenuItem_Click;
             // 
             // studentToolStripMenuItem
             // 
             studentToolStripMenuItem.Name = "studentToolStripMenuItem";
             studentToolStripMenuItem.Size = new Size(93, 26);
             studentToolStripMenuItem.Text = "Student";
+            studentToolStripMenuItem.Click += studentToolStripMenuItem_Click;
             // 
             // pbDashClose
             // 
