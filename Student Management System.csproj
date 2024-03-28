@@ -10,7 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Logics\" />
     <Folder Include="Data Layer\" />
   </ItemGroup>
 
