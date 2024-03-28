@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Student_Management_System.Logics
 {
-    internal class Auth
+    internal class AuthBLL
     {
         public int id { get; set; }
         public string firstname { get; set; }

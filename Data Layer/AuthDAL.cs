@@ -1,0 +1,13 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+namespace Student_Management_System.Data_Layer
+{
+    internal class AuthDAL
+    {
+
+    }
+}
