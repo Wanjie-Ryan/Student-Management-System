@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Student_Management_System.Data_Layer;
+using Student_Management_System.Logics;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +19,10 @@ namespace Student_Management_System.UI
             InitializeComponent();
         }
 
+        LoginBLL b = new LoginBLL();
+        LoginDAL logdal = new LoginDAL();
+
+
         private void pbClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -24,8 +30,13 @@ namespace Student_Management_System.UI
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Dashboard dashboard = new Dashboard();
-            dashboard.Show();
+
+            b.username = txtusername.Text;
+
+
+
+            //Dashboard dashboard = new Dashboard();
+            //dashboard.Show();
         }
     }
 }
