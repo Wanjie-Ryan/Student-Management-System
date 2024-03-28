@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using Student_Management_System.Logics;
 using BCrypt.Net;
+using System.Data;
 
 namespace Student_Management_System.Data_Layer
 {
     internal class AuthDAL
     {
 
-        public static bool Register(AuthBLL b)
+        public bool Register(AuthBLL b)
         {
             bool isSuccess = false;
 
@@ -24,10 +25,10 @@ namespace Student_Management_System.Data_Layer
                     string hashedpassword = BCrypt.Net.BCrypt.EnhancedHashPassword(b.password);
                     //string hashedPassword = BCrypt.EnhancedHashPassword(b.Password);
 
-                    string sql = "INSERT INTO users (id, first_name, last_name, username, reg_no, role, password) VALUES (@id, @first_name, @last_name, @username, @reg_no, @role, @hashedpassword )";
+                    string sql = "INSERT INTO users ( first_name, last_name, username, reg_no, role, password) VALUES ( @first_name, @last_name, @username, @reg_no, @role, @password )";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-                    cmd.Parameters.AddWithValue("@id", b.id);
+                    //cmd.Parameters.AddWithValue("@id", b.id);
                     cmd.Parameters.AddWithValue("@first_name", b.firstname);
                     cmd.Parameters.AddWithValue("@last_name", b.lastname); 
                     cmd.Parameters.AddWithValue("@username", b.username);
@@ -36,9 +37,21 @@ namespace Student_Management_System.Data_Layer
                     cmd.Parameters.AddWithValue("@password", hashedpassword);
                     conn.Open();
 
-                    int rows = cmd.ExecuteNonQuery();
+                    //MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    //DataTable dt = new DataTable();
+                    //adapter.Fill(dt);
 
-                    if(rows>0)
+                    //if (dt.Rows.Count>0)
+                    //{
+                    //    isSuccess = true;
+                    //}
+                    //else
+                    //{
+                    //    isSuccess = false;
+                    //}
+
+                    int rows = cmd.ExecuteNonQuery();
+                    if(rows > 0)
                     {
                         isSuccess = true;
                     }

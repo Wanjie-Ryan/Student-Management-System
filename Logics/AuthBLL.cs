@@ -8,7 +8,7 @@ namespace Student_Management_System.Logics
 {
     internal class AuthBLL
     {
-        public int id { get; set; }
+        //public int id { get; set; }
         public string firstname { get; set; }
         public string lastname { get; set; }
         public string username { get; set; }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Student_Management_System.Data_Layer;
+using Student_Management_System.Logics;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +19,9 @@ namespace Student_Management_System.UI
             InitializeComponent();
         }
 
+        AuthBLL b = new AuthBLL();
+        AuthDAL adal = new AuthDAL();
+
         private void pbClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -24,8 +29,30 @@ namespace Student_Management_System.UI
 
         private void btnReg_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
-            login.Show();
+           
+
+            b.firstname = txtFirstname.Text;
+            b.lastname = txtLastname.Text;
+            b.username = txtusername.Text;
+            b.regno = txtReg.Text;
+            b.role = cmbRole.Text;
+            b.password = txtPwd.Text;
+
+            bool Success = adal.Register(b);
+
+            if(Success == true)
+            {
+                MessageBox.Show("Registration Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Login login = new Login();
+                login.Show();
+            }
+            else
+            {
+                MessageBox.Show("Registration Failed", "Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+
         }
     }
 }

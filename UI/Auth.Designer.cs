@@ -37,7 +37,7 @@
             txtPwd = new TextBox();
             cmbRole = new ComboBox();
             txtReg = new TextBox();
-            textBox1 = new TextBox();
+            txtusername = new TextBox();
             txtLastname = new TextBox();
             txtFirstname = new TextBox();
             lblPwd = new Label();
@@ -90,7 +90,7 @@
             groupBoxReg.Controls.Add(txtPwd);
             groupBoxReg.Controls.Add(cmbRole);
             groupBoxReg.Controls.Add(txtReg);
-            groupBoxReg.Controls.Add(textBox1);
+            groupBoxReg.Controls.Add(txtusername);
             groupBoxReg.Controls.Add(txtLastname);
             groupBoxReg.Controls.Add(txtFirstname);
             groupBoxReg.Controls.Add(lblPwd);
@@ -140,17 +140,17 @@
             // txtReg
             // 
             txtReg.Location = new Point(170, 234);
-            txtReg.MaxLength = 10;
+            txtReg.MaxLength = 20;
             txtReg.Name = "txtReg";
             txtReg.Size = new Size(193, 29);
             txtReg.TabIndex = 9;
             // 
-            // textBox1
+            // txtusername
             // 
-            textBox1.Location = new Point(134, 176);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(181, 29);
-            textBox1.TabIndex = 8;
+            txtusername.Location = new Point(134, 176);
+            txtusername.Name = "txtusername";
+            txtusername.Size = new Size(181, 29);
+            txtusername.TabIndex = 8;
             // 
             // txtLastname
             // 
@@ -257,7 +257,7 @@
         private TextBox txtLastname;
         private TextBox txtFirstname;
         private Label lblPwd;
-        private TextBox textBox1;
+        private TextBox txtusername;
         private Button btnReg;
         private TextBox txtPwd;
         private ComboBox cmbRole;
