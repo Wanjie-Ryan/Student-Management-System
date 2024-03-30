@@ -87,7 +87,26 @@ namespace Student_Management_System.Data_Layer
             {
                 try
                 {
+                    string sql = "UPDATE assignemt SET name =@name, description =@description, subject=@subject, deadline=@deadline WHERE assignment_id=@assignment_id";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
 
+                    cmd.Parameters.AddWithValue("@id", b.id);
+                    cmd.Parameters.AddWithValue("@name", b.name);
+                    cmd.Parameters.AddWithValue("@description", b.description);
+                    cmd.Parameters.AddWithValue("@subject", b.subject);
+                    cmd.Parameters.AddWithValue("@deadline", b.deadline);
+                    conn.Open();
+
+                    int rows = cmd.ExecuteNonQuery();
+
+                    if (rows > 0)
+                    {
+                        isSuccess = true;
+                    }
+                    else
+                    {
+                        isSuccess = false;
+                    }
                 }
                 catch(Exception ex)
                 {
@@ -98,6 +117,30 @@ namespace Student_Management_System.Data_Layer
                     conn.Close();
                 }
             }
+
+            return isSuccess;
+        }
+
+        public bool Delete(AssignmentBLL b)
+        {
+            bool isSuccess = false;
+
+            using(MySqlConnection conn = new MySqlConnection(Program.GetConnectionString()))
+            {
+                try
+                {
+
+                }
+                catch(Exception ex)
+                {
+
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+
 
             return isSuccess;
         }
