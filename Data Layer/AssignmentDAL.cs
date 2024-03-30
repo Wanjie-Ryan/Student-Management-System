@@ -129,11 +129,24 @@ namespace Student_Management_System.Data_Layer
             {
                 try
                 {
+                    string sql = "DELETE FROM assignments WHERE assignment_id = @assignment_id";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
 
+                    cmd.Parameters.AddWithValue("@assignment_id", b.id);
+                    int rows = cmd.ExecuteNonQuery();
+
+                    if (rows > 0)
+                    {
+                        isSuccess = true;
+                    }
+                    else
+                    {
+                        isSuccess = false;
+                    }
                 }
                 catch(Exception ex)
                 {
-
+                    MessageBox.Show(ex.Message);
                 }
                 finally
                 {
@@ -143,6 +156,14 @@ namespace Student_Management_System.Data_Layer
 
 
             return isSuccess;
+        }
+
+        public DataTable Search(string keyword)
+        {
+            DataTable dt = new DataTable();
+
+
+            return dt;
         }
     }
 }
