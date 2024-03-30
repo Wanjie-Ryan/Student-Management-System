@@ -99,6 +99,9 @@ namespace Student_Management_System.UI
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
+                DataTable dt = d.Select();
+                dataGridAssignments.DataSource = dt;
+                Clear();
             }
             else
             {
