@@ -46,7 +46,13 @@ namespace Student_Management_System.Data_Layer
             {
                 try
                 {
+                    string sql = "INSERT INTO assignment (name, description, subject, deadline) VALUES (@name, @description, @subject, @deadline)";
+                    MySqlCommand cmd = new MySqlCommand(sql,conn);
 
+                    cmd.Parameters.AddWithValue("@name", b.name);
+                    cmd.Parameters.AddWithValue("@description", b.description);
+                    cmd.Parameters.AddWithValue("@subject", b.subject);
+                    cmd.Parameters.AddWithValue("@deadline", b.deadline);
                 }
                 catch(Exception ex)
                 {
