@@ -49,6 +49,8 @@
             btnClear = new Button();
             btnDelete = new Button();
             pbClose = new PictureBox();
+            lblID = new Label();
+            txtAssignmentID = new TextBox();
             menuStripTeachers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridAssignments).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbClose).BeginInit();
@@ -90,7 +92,7 @@
             // lblAssignment
             // 
             lblAssignment.AutoSize = true;
-            lblAssignment.Location = new Point(12, 98);
+            lblAssignment.Location = new Point(12, 122);
             lblAssignment.Name = "lblAssignment";
             lblAssignment.Size = new Size(167, 22);
             lblAssignment.TabIndex = 2;
@@ -99,7 +101,7 @@
             // lblAssDesc
             // 
             lblAssDesc.AutoSize = true;
-            lblAssDesc.Location = new Point(12, 193);
+            lblAssDesc.Location = new Point(12, 213);
             lblAssDesc.Name = "lblAssDesc";
             lblAssDesc.Size = new Size(225, 22);
             lblAssDesc.TabIndex = 3;
@@ -108,7 +110,7 @@
             // lblSubject
             // 
             lblSubject.AutoSize = true;
-            lblSubject.Location = new Point(12, 261);
+            lblSubject.Location = new Point(12, 291);
             lblSubject.Name = "lblSubject";
             lblSubject.Size = new Size(76, 22);
             lblSubject.TabIndex = 4;
@@ -116,7 +118,7 @@
             // 
             // txtAssName
             // 
-            txtAssName.Location = new Point(196, 91);
+            txtAssName.Location = new Point(196, 115);
             txtAssName.Name = "txtAssName";
             txtAssName.Size = new Size(275, 29);
             txtAssName.TabIndex = 5;
@@ -143,7 +145,7 @@
             // 
             cmbSubject.FormattingEnabled = true;
             cmbSubject.Items.AddRange(new object[] { "Physics", "English", "Biology", "Chemistry", "History", "Mathematics", "Agriculture" });
-            cmbSubject.Location = new Point(128, 253);
+            cmbSubject.Location = new Point(137, 283);
             cmbSubject.Name = "cmbSubject";
             cmbSubject.Size = new Size(203, 30);
             cmbSubject.TabIndex = 10;
@@ -243,11 +245,31 @@
             pbClose.TabStop = false;
             pbClose.Click += pbClose_Click;
             // 
+            // lblID
+            // 
+            lblID.AutoSize = true;
+            lblID.Location = new Point(12, 61);
+            lblID.Name = "lblID";
+            lblID.Size = new Size(145, 22);
+            lblID.TabIndex = 19;
+            lblID.Text = "Assignment ID";
+            // 
+            // txtAssignmentID
+            // 
+            txtAssignmentID.Cursor = Cursors.No;
+            txtAssignmentID.Location = new Point(196, 58);
+            txtAssignmentID.Name = "txtAssignmentID";
+            txtAssignmentID.ReadOnly = true;
+            txtAssignmentID.Size = new Size(275, 29);
+            txtAssignmentID.TabIndex = 20;
+            // 
             // Teacher
             // 
             AutoScaleDimensions = new SizeF(12F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1200, 491);
+            Controls.Add(txtAssignmentID);
+            Controls.Add(lblID);
             Controls.Add(pbClose);
             Controls.Add(btnDelete);
             Controls.Add(btnClear);
@@ -303,5 +325,7 @@
         private Button btnClear;
         private Button btnDelete;
         private PictureBox pbClose;
+        private Label lblID;
+        private TextBox txtAssignmentID;
     }
 }
