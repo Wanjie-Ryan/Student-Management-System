@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Student_Management_System.Data_Layer;
+using Student_Management_System.Logics;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +19,9 @@ namespace Student_Management_System.UI
             InitializeComponent();
         }
 
+        AssignmentBLL b = new AssignmentBLL();
+        AssignmentDAL d = new AssignmentDAL();
+
         private void studentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -31,6 +36,25 @@ namespace Student_Management_System.UI
         {
             CheckStudents checkStudents = new CheckStudents();
             checkStudents.Show();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            b.name = txtAssName.Text;
+            b.description = txtAssDesc.Text;
+            b.subject = cmbSubject.Text;
+            b.deadline = dateTimePickerAssignment.Value;
+
+            bool success = d.Insert(b);
+
+            if(success == true)
+            {
+
+            }
+            else
+            {
+
+            }
         }
     }
 }
