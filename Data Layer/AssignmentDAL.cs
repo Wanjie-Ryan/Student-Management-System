@@ -89,10 +89,10 @@ namespace Student_Management_System.Data_Layer
                 try
                 {
                     string sql =
-                        "UPDATE assignemt SET name =@name, description =@description, subject=@subject, deadline=@deadline WHERE assignment_id=@assignment_id";
+                        "UPDATE assignment SET name =@name, description =@description, subject=@subject, deadline=@deadline WHERE assignment_id=@assignment_id";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-                    cmd.Parameters.AddWithValue("@id", b.id);
+                    cmd.Parameters.AddWithValue("@assignment_id", b.id);
                     cmd.Parameters.AddWithValue("@name", b.name);
                     cmd.Parameters.AddWithValue("@description", b.description);
                     cmd.Parameters.AddWithValue("@subject", b.subject);

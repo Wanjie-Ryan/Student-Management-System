@@ -131,6 +131,7 @@
             dataGridAssignments.RowHeadersWidth = 51;
             dataGridAssignments.Size = new Size(576, 237);
             dataGridAssignments.TabIndex = 8;
+            dataGridAssignments.RowHeaderMouseClick += dataGridAssignments_RowHeaderMouseClick;
             // 
             // lblDeadline
             // 
@@ -207,6 +208,7 @@
             btnUpdate.TabIndex = 15;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnClear
             // 
@@ -220,6 +222,7 @@
             btnClear.TabIndex = 16;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
             // 
             // btnDelete
             // 
@@ -296,6 +299,7 @@
             Name = "Teacher";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Teacher";
+            Load += Teacher_Load;
             menuStripTeachers.ResumeLayout(false);
             menuStripTeachers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridAssignments).EndInit();

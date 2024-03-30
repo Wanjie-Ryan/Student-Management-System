@@ -35,6 +35,15 @@ namespace Student_Management_System.UI
             checkStudents.Show();
         }
 
+        public void Clear()
+        {
+            txtAssignmentID.Text = "";
+            txtAssName.Text = "";
+            txtAssDesc.Text = "";
+            cmbSubject.Text = "";
+            dateTimePickerAssignment.Value = DateTime.Now;
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             b.name = txtAssName.Text;
@@ -54,6 +63,7 @@ namespace Student_Management_System.UI
                 );
                 DataTable dt = d.Select();
                 dataGridAssignments.DataSource = dt;
+                Clear();
             }
             else
             {
@@ -64,6 +74,62 @@ namespace Student_Management_System.UI
                     MessageBoxIcon.Error
                 );
             }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            b.id = int.Parse(txtAssignmentID.Text);
+            b.name = txtAssName.Text;
+            b.description = txtAssDesc.Text;
+            b.subject = cmbSubject.Text;
+            b.deadline = dateTimePickerAssignment.Value;
+
+            bool success = d.Update(b);
+
+            if (success == true)
+            {
+                MessageBox.Show(
+                    "Assignment updated",
+                    "Success",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Failed to update assignment",
+                    "Failed",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+        }
+
+        private void dataGridAssignments_RowHeaderMouseClick(
+            object sender,
+            DataGridViewCellMouseEventArgs e
+        )
+        {
+            int rowIndex = e.RowIndex;
+            txtAssignmentID.Text = dataGridAssignments.Rows[rowIndex].Cells[0].Value.ToString();
+            txtAssName.Text = dataGridAssignments.Rows[rowIndex].Cells[1].Value.ToString();
+            txtAssDesc.Text = dataGridAssignments.Rows[rowIndex].Cells[2].Value.ToString();
+            cmbSubject.Text = dataGridAssignments.Rows[rowIndex].Cells[3].Value.ToString();
+            dateTimePickerAssignment.Value = Convert.ToDateTime(
+                dataGridAssignments.Rows[rowIndex].Cells[4].Value
+            );
+        }
+
+        private void Teacher_Load(object sender, EventArgs e)
+        {
+            DataTable dt = d.Select();
+            dataGridAssignments.DataSource = dt;
         }
     }
 }
