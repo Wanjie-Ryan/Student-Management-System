@@ -29,7 +29,7 @@ namespace Student_Management_System.UI
 
         private void btnReg_Click(object sender, EventArgs e)
         {
-           
+
 
             b.firstname = txtFirstname.Text;
             b.lastname = txtLastname.Text;
@@ -40,7 +40,7 @@ namespace Student_Management_System.UI
 
             bool Success = adal.Register(b);
 
-            if(Success == true)
+            if (Success == true)
             {
                 MessageBox.Show("Registration Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Login login = new Login();
@@ -53,6 +53,12 @@ namespace Student_Management_System.UI
             }
 
 
+        }
+
+        private void lblTxtLoginLink_Click(object sender, EventArgs e)
+        {
+            Login loginform = new Login();
+            loginform.Show();
         }
     }
 }

@@ -33,6 +33,8 @@
             pbClose = new PictureBox();
             lblregHeader = new Label();
             groupBoxReg = new GroupBox();
+            lblTxtLoginLink = new Label();
+            lblLink = new Label();
             btnReg = new Button();
             txtPwd = new TextBox();
             cmbRole = new ComboBox();
@@ -86,6 +88,8 @@
             // groupBoxReg
             // 
             groupBoxReg.BackColor = Color.WhiteSmoke;
+            groupBoxReg.Controls.Add(lblTxtLoginLink);
+            groupBoxReg.Controls.Add(lblLink);
             groupBoxReg.Controls.Add(btnReg);
             groupBoxReg.Controls.Add(txtPwd);
             groupBoxReg.Controls.Add(cmbRole);
@@ -101,10 +105,33 @@
             groupBoxReg.Controls.Add(lblFirstName);
             groupBoxReg.Location = new Point(303, 86);
             groupBoxReg.Name = "groupBoxReg";
-            groupBoxReg.Size = new Size(399, 452);
+            groupBoxReg.Size = new Size(399, 488);
             groupBoxReg.TabIndex = 2;
             groupBoxReg.TabStop = false;
             groupBoxReg.Text = "Registration";
+            // 
+            // lblTxtLoginLink
+            // 
+            lblTxtLoginLink.AutoSize = true;
+            lblTxtLoginLink.Cursor = Cursors.Hand;
+            lblTxtLoginLink.Font = new Font("Modern No. 20", 10.1999989F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTxtLoginLink.ForeColor = Color.DarkGreen;
+            lblTxtLoginLink.Location = new Point(221, 465);
+            lblTxtLoginLink.Name = "lblTxtLoginLink";
+            lblTxtLoginLink.Size = new Size(55, 20);
+            lblTxtLoginLink.TabIndex = 13;
+            lblTxtLoginLink.Text = "Login";
+            lblTxtLoginLink.Click += lblTxtLoginLink_Click;
+            // 
+            // lblLink
+            // 
+            lblLink.AutoSize = true;
+            lblLink.Font = new Font("Modern No. 20", 10.1999989F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLink.Location = new Point(49, 465);
+            lblLink.Name = "lblLink";
+            lblLink.Size = new Size(166, 20);
+            lblLink.TabIndex = 12;
+            lblLink.Text = "Already Registered?";
             // 
             // btnReg
             // 
@@ -225,7 +252,7 @@
             AutoScaleDimensions = new SizeF(12F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Silver;
-            ClientSize = new Size(1000, 550);
+            ClientSize = new Size(1000, 630);
             Controls.Add(groupBoxReg);
             Controls.Add(panelAuth);
             Font = new Font("Modern No. 20", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -262,5 +289,7 @@
         private TextBox txtPwd;
         private ComboBox cmbRole;
         private TextBox txtReg;
+        private Label lblLink;
+        private Label lblTxtLoginLink;
     }
 }

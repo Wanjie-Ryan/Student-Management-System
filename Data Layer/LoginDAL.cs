@@ -16,12 +16,14 @@ namespace Student_Management_System.Data_Layer
         public bool Login(LoginBLL b)
         {
             bool isSuccess = false;
+            bool verifiedPwd = false;
 
-            using(MySqlConnection conn = new MySqlConnection(Program.GetConnectionString()))
+            using (MySqlConnection conn = new MySqlConnection(Program.GetConnectionString()))
             {
                 try
                 {
                     string sql = "SELECT password FROM users WHERE username = @username ";
+                    //Console.WriteLine(sql);
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                     cmd.Parameters.AddWithValue("@username", b.username);
@@ -43,19 +45,22 @@ namespace Student_Management_System.Data_Layer
                         string hashedPassword = result.ToString();
 
                         // Verify password
-                        isSuccess = BCrypt.Net.BCrypt.Verify(b.password, hashedPassword);
+                        verifiedPwd = BCrypt.Net.BCrypt.Verify(b.password, hashedPassword);
+                        isSuccess= true;
                     }
                     else
                     {
                         // Username not found
-                        Console.WriteLine("Username not found.");
+                        //Console.WriteLine("Username not found.");
+                        isSuccess = false;
                     }
 
                 }
                 catch (Exception ex)
                 {
-                    //MessageBox.Show(ex.Message);
-                    Console.WriteLine(ex.Message);
+                    //Console.WriteLine("An error occurred: " + ex.Message);
+                    MessageBox.Show(ex.Message);
+                    //Console.WriteLine(ex.Message);
                 }
                 finally
                 {

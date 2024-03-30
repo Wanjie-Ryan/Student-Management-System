@@ -32,11 +32,24 @@ namespace Student_Management_System.UI
         {
 
             b.username = txtusername.Text;
+            b.password = txtPwd.Text;
+
+            bool Success = logdal.Login(b);
+
+            if(Success == true)
+            {
+                MessageBox.Show("Login Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Dashboard dashboard = new Dashboard();
+                dashboard.Show();
+            }
+            else
+            {
+                MessageBox.Show("Login failed", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
 
-            //Dashboard dashboard = new Dashboard();
-            //dashboard.Show();
         }
     }
 }
