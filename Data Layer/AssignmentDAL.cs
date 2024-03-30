@@ -1,17 +1,16 @@
-﻿using MySql.Data.MySqlClient;
-using Student_Management_System.Logics;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using Student_Management_System.Logics;
 
 namespace Student_Management_System.Data_Layer
 {
     internal class AssignmentDAL
     {
-
         public DataTable Select()
         {
             DataTable dt = new DataTable();
@@ -21,12 +20,12 @@ namespace Student_Management_System.Data_Layer
                 try
                 {
                     string sql = "SELECT * FROM assignment";
-                    MySqlCommand cmd = new MySqlCommand(sql,conn);
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     conn.Open();
                     adapter.Fill(dt);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -38,16 +37,18 @@ namespace Student_Management_System.Data_Layer
 
             return dt;
         }
-       public bool Insert(AssignmentBLL b)
+
+        public bool Insert(AssignmentBLL b)
         {
             bool isSuccess = false;
 
-            using(MySqlConnection conn = new MySqlConnection(Program.GetConnectionString()))
+            using (MySqlConnection conn = new MySqlConnection(Program.GetConnectionString()))
             {
                 try
                 {
-                    string sql = "INSERT INTO assignment (name, description, subject, deadline) VALUES (@name, @description, @subject, @deadline)";
-                    MySqlCommand cmd = new MySqlCommand(sql,conn);
+                    string sql =
+                        "INSERT INTO assignment (name, description, subject, deadline) VALUES (@name, @description, @subject, @deadline)";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                     cmd.Parameters.AddWithValue("@name", b.name);
                     cmd.Parameters.AddWithValue("@description", b.description);
@@ -66,7 +67,7 @@ namespace Student_Management_System.Data_Layer
                         isSuccess = false;
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -83,11 +84,12 @@ namespace Student_Management_System.Data_Layer
         {
             bool isSuccess = false;
 
-            using(MySqlConnection conn = new MySqlConnection(Program.GetConnectionString()))
+            using (MySqlConnection conn = new MySqlConnection(Program.GetConnectionString()))
             {
                 try
                 {
-                    string sql = "UPDATE assignemt SET name =@name, description =@description, subject=@subject, deadline=@deadline WHERE assignment_id=@assignment_id";
+                    string sql =
+                        "UPDATE assignemt SET name =@name, description =@description, subject=@subject, deadline=@deadline WHERE assignment_id=@assignment_id";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                     cmd.Parameters.AddWithValue("@id", b.id);
@@ -108,7 +110,7 @@ namespace Student_Management_System.Data_Layer
                         isSuccess = false;
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -125,7 +127,7 @@ namespace Student_Management_System.Data_Layer
         {
             bool isSuccess = false;
 
-            using(MySqlConnection conn = new MySqlConnection(Program.GetConnectionString()))
+            using (MySqlConnection conn = new MySqlConnection(Program.GetConnectionString()))
             {
                 try
                 {
@@ -144,7 +146,7 @@ namespace Student_Management_System.Data_Layer
                         isSuccess = false;
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -154,7 +156,6 @@ namespace Student_Management_System.Data_Layer
                 }
             }
 
-
             return isSuccess;
         }
 
@@ -162,6 +163,33 @@ namespace Student_Management_System.Data_Layer
         {
             DataTable dt = new DataTable();
 
+            using (MySqlConnection conn = new MySqlConnection(Program.GetConnectionString()))
+            {
+                try
+                {
+                    string sql =
+                        "SELECT * FROM assignment WHERE name LIKE '%"
+                        + keyword
+                        + "%' OR description LIKE '%"
+                        + keyword
+                        + "%' OR subject LIKE '%"
+                        + keyword
+                        + "%'";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    conn.Open();
+
+                    adapter.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
 
             return dt;
         }
