@@ -1,6 +1,6 @@
-using Student_Management_System.UI;
 using System;
 using System.Windows.Forms;
+using Student_Management_System.UI;
 
 namespace Student_Management_System
 {
@@ -9,8 +9,8 @@ namespace Student_Management_System
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
-        /// 
-         // Define connection string variables
+        ///
+        // Define connection string variables
         private static string server = "localhost";
         private static string database = "schoolmanagement";
         private static string username = "root";

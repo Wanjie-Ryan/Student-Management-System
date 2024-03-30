@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BCrypt.Net;
 using MySql.Data.MySqlClient;
 using Student_Management_System.Logics;
-using BCrypt.Net;
-using System.Data;
 
 namespace Student_Management_System.Data_Layer
 {
     internal class AuthDAL
     {
-
         public bool Register(AuthBLL b)
         {
             bool isSuccess = false;
@@ -21,16 +20,16 @@ namespace Student_Management_System.Data_Layer
             {
                 try
                 {
-
                     string hashedpassword = BCrypt.Net.BCrypt.EnhancedHashPassword(b.password);
                     //string hashedPassword = BCrypt.EnhancedHashPassword(b.Password);
 
-                    string sql = "INSERT INTO users ( first_name, last_name, username, reg_no, role, password) VALUES ( @first_name, @last_name, @username, @reg_no, @role, @password )";
+                    string sql =
+                        "INSERT INTO users ( first_name, last_name, username, reg_no, role, password) VALUES ( @first_name, @last_name, @username, @reg_no, @role, @password )";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                     //cmd.Parameters.AddWithValue("@id", b.id);
                     cmd.Parameters.AddWithValue("@first_name", b.firstname);
-                    cmd.Parameters.AddWithValue("@last_name", b.lastname); 
+                    cmd.Parameters.AddWithValue("@last_name", b.lastname);
                     cmd.Parameters.AddWithValue("@username", b.username);
                     cmd.Parameters.AddWithValue("@reg_no", b.regno);
                     cmd.Parameters.AddWithValue("@role", b.role);
@@ -51,7 +50,7 @@ namespace Student_Management_System.Data_Layer
                     //}
 
                     int rows = cmd.ExecuteNonQuery();
-                    if(rows > 0)
+                    if (rows > 0)
                     {
                         isSuccess = true;
                     }
@@ -60,7 +59,7 @@ namespace Student_Management_System.Data_Layer
                         isSuccess = false;
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -68,12 +67,9 @@ namespace Student_Management_System.Data_Layer
                 {
                     conn.Close();
                 }
-            
-            
-            
             }
 
-                return isSuccess;
+            return isSuccess;
         }
     }
 }

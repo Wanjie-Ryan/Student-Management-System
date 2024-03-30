@@ -15,6 +15,5 @@ namespace Student_Management_System.Logics
         public string regno { get; set; }
         public string role { get; set; }
         public string password { get; set; }
-        
     }
 }

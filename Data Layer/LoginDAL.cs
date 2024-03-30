@@ -1,13 +1,12 @@
-﻿using MySql.Data.MySqlClient;
-using Student_Management_System.Logics;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BCrypt.Net;
+using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Common;
-
+using Student_Management_System.Logics;
 
 namespace Student_Management_System.Data_Layer
 {
@@ -46,7 +45,7 @@ namespace Student_Management_System.Data_Layer
 
                         // Verify password
                         verifiedPwd = BCrypt.Net.BCrypt.Verify(b.password, hashedPassword);
-                        isSuccess= true;
+                        isSuccess = true;
                     }
                     else
                     {
@@ -54,7 +53,6 @@ namespace Student_Management_System.Data_Layer
                         //Console.WriteLine("Username not found.");
                         isSuccess = false;
                     }
-
                 }
                 catch (Exception ex)
                 {
