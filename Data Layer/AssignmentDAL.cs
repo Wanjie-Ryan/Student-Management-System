@@ -131,10 +131,11 @@ namespace Student_Management_System.Data_Layer
             {
                 try
                 {
-                    string sql = "DELETE FROM assignments WHERE assignment_id = @assignment_id";
+                    string sql = "DELETE FROM assignment WHERE assignment_id = @assignment_id";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                     cmd.Parameters.AddWithValue("@assignment_id", b.id);
+                    conn.Open();
                     int rows = cmd.ExecuteNonQuery();
 
                     if (rows > 0)

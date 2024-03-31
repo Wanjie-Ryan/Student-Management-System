@@ -173,6 +173,7 @@
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(485, 29);
             txtSearch.TabIndex = 13;
+            txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // txtAssDesc
             // 
@@ -236,6 +237,7 @@
             btnDelete.TabIndex = 17;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
             // pbClose
             // 

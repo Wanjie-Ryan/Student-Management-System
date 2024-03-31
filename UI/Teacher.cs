@@ -134,5 +134,49 @@ namespace Student_Management_System.UI
             DataTable dt = d.Select();
             dataGridAssignments.DataSource = dt;
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            b.id = int.Parse(txtAssignmentID.Text);
+            bool Success = d.Delete(b);
+
+            if (Success == true)
+            {
+                MessageBox.Show(
+                    "Deleted Successfully",
+                    "Success",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+                DataTable dt = d.Select();
+                dataGridAssignments.DataSource = dt;
+                Clear();
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Deletion Failed",
+                    "Failed",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = txtSearch.Text;
+
+            if (keyword != null)
+            {
+                DataTable dt = d.Search(keyword);
+                dataGridAssignments.DataSource = dt;
+            }
+            else
+            {
+                DataTable dt = d.Select();
+                dataGridAssignments.DataSource = dt;
+            }
+        }
     }
 }
