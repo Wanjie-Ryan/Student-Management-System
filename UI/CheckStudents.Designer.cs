@@ -51,6 +51,8 @@
             btnAdd = new Button();
             lblUsername = new Label();
             txtUsername = new TextBox();
+            txtStudentID = new TextBox();
+            lblStudentID = new Label();
             menuStripStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridCheckStudents).BeginInit();
@@ -103,7 +105,7 @@
             // lblFirstname
             // 
             lblFirstname.AutoSize = true;
-            lblFirstname.Location = new Point(12, 92);
+            lblFirstname.Location = new Point(16, 106);
             lblFirstname.Name = "lblFirstname";
             lblFirstname.Size = new Size(107, 22);
             lblFirstname.TabIndex = 21;
@@ -138,7 +140,7 @@
             // 
             // txtFirstname
             // 
-            txtFirstname.Location = new Point(183, 92);
+            txtFirstname.Location = new Point(183, 99);
             txtFirstname.Name = "txtFirstname";
             txtFirstname.Size = new Size(184, 29);
             txtFirstname.TabIndex = 25;
@@ -260,11 +262,31 @@
             txtUsername.Size = new Size(184, 29);
             txtUsername.TabIndex = 37;
             // 
+            // txtStudentID
+            // 
+            txtStudentID.Cursor = Cursors.No;
+            txtStudentID.Location = new Point(183, 44);
+            txtStudentID.Name = "txtStudentID";
+            txtStudentID.ReadOnly = true;
+            txtStudentID.Size = new Size(184, 29);
+            txtStudentID.TabIndex = 38;
+            // 
+            // lblStudentID
+            // 
+            lblStudentID.AutoSize = true;
+            lblStudentID.Location = new Point(16, 51);
+            lblStudentID.Name = "lblStudentID";
+            lblStudentID.Size = new Size(110, 22);
+            lblStudentID.TabIndex = 39;
+            lblStudentID.Text = "Student ID";
+            // 
             // CheckStudents
             // 
             AutoScaleDimensions = new SizeF(12F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1200, 473);
+            Controls.Add(lblStudentID);
+            Controls.Add(txtStudentID);
             Controls.Add(txtUsername);
             Controls.Add(lblUsername);
             Controls.Add(btnDelete);
@@ -323,5 +345,7 @@
         private Button btnAdd;
         private Label lblUsername;
         private TextBox txtUsername;
+        private TextBox txtStudentID;
+        private Label lblStudentID;
     }
 }
