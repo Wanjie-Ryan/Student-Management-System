@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Student_Management_System.Data_Layer;
+using Student_Management_System.Logics;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +18,8 @@ namespace Student_Management_System.UI
         {
             InitializeComponent();
         }
+        CheckStudentsBLL cb =  new CheckStudentsBLL();
+        CheckStudentsDAL cdal = new CheckStudentsDAL();
 
         private void pbClose_Click(object sender, EventArgs e)
         {
@@ -31,6 +35,12 @@ namespace Student_Management_System.UI
         private void txtRegno_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void CheckStudents_Load(object sender, EventArgs e)
+        {
+            DataTable dt = cdal.Select();
+            dataGridCheckStudents.DataSource = dt;
         }
     }
 }

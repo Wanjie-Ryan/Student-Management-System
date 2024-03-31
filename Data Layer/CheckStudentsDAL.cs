@@ -19,7 +19,7 @@ namespace Student_Management_System.Data_Layer
                 try
                 {
                     string sql =
-                        "SELECT id, username, role, first_name, last_name, reg_no FROM users";
+                        "SELECT id, username, role, first_name, last_name, reg_no FROM users WHERE role = 'student'";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     conn.Open();

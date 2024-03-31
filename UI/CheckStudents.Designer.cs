@@ -313,6 +313,7 @@
             Name = "CheckStudents";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CheckStudents";
+            Load += CheckStudents_Load;
             menuStripStudents.ResumeLayout(false);
             menuStripStudents.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbClose).EndInit();
