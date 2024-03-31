@@ -27,5 +27,10 @@ namespace Student_Management_System.UI
             Teacher teacherForm = new Teacher();
             teacherForm.Show();
         }
+
+        private void txtRegno_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

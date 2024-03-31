@@ -34,14 +34,14 @@
             studentsToolStripMenuItem = new ToolStripMenuItem();
             pbClose = new PictureBox();
             lblStudentsTitle = new Label();
-            lblStudentname = new Label();
+            lblFirstname = new Label();
             lblRegno = new Label();
-            lblGrade = new Label();
-            lblFees = new Label();
-            txtStudentname = new TextBox();
+            lblRole = new Label();
+            lblLastname = new Label();
+            txtFirstname = new TextBox();
             txtRegno = new TextBox();
             cmbGrade = new ComboBox();
-            txtFees = new TextBox();
+            txtLastname = new TextBox();
             txtSearch = new TextBox();
             lblSearch = new Label();
             dataGridCheckStudents = new DataGridView();
@@ -49,6 +49,8 @@
             btnClear = new Button();
             btnUpdate = new Button();
             btnAdd = new Button();
+            lblUsername = new Label();
+            txtUsername = new TextBox();
             menuStripStudents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridCheckStudents).BeginInit();
@@ -94,75 +96,76 @@
             lblStudentsTitle.AutoSize = true;
             lblStudentsTitle.Location = new Point(488, 44);
             lblStudentsTitle.Name = "lblStudentsTitle";
-            lblStudentsTitle.Size = new Size(211, 22);
+            lblStudentsTitle.Size = new Size(244, 22);
             lblStudentsTitle.TabIndex = 20;
-            lblStudentsTitle.Text = "Input Fees and Grades";
+            lblStudentsTitle.Text = "Check Students in School ";
             // 
-            // lblStudentname
+            // lblFirstname
             // 
-            lblStudentname.AutoSize = true;
-            lblStudentname.Location = new Point(12, 92);
-            lblStudentname.Name = "lblStudentname";
-            lblStudentname.Size = new Size(132, 22);
-            lblStudentname.TabIndex = 21;
-            lblStudentname.Text = "Student name";
+            lblFirstname.AutoSize = true;
+            lblFirstname.Location = new Point(12, 92);
+            lblFirstname.Name = "lblFirstname";
+            lblFirstname.Size = new Size(107, 22);
+            lblFirstname.TabIndex = 21;
+            lblFirstname.Text = "First name";
             // 
             // lblRegno
             // 
             lblRegno.AutoSize = true;
-            lblRegno.Location = new Point(12, 156);
+            lblRegno.Location = new Point(12, 272);
             lblRegno.Name = "lblRegno";
             lblRegno.Size = new Size(155, 22);
             lblRegno.TabIndex = 22;
             lblRegno.Text = "Registration no.";
             // 
-            // lblGrade
+            // lblRole
             // 
-            lblGrade.AutoSize = true;
-            lblGrade.Location = new Point(12, 216);
-            lblGrade.Name = "lblGrade";
-            lblGrade.Size = new Size(63, 22);
-            lblGrade.TabIndex = 23;
-            lblGrade.Text = "Grade";
+            lblRole.AutoSize = true;
+            lblRole.Location = new Point(16, 329);
+            lblRole.Name = "lblRole";
+            lblRole.Size = new Size(51, 22);
+            lblRole.TabIndex = 23;
+            lblRole.Text = "Role";
             // 
-            // lblFees
+            // lblLastname
             // 
-            lblFees.AutoSize = true;
-            lblFees.Location = new Point(12, 289);
-            lblFees.Name = "lblFees";
-            lblFees.Size = new Size(49, 22);
-            lblFees.TabIndex = 24;
-            lblFees.Text = "Fees";
+            lblLastname.AutoSize = true;
+            lblLastname.Location = new Point(16, 157);
+            lblLastname.Name = "lblLastname";
+            lblLastname.Size = new Size(103, 22);
+            lblLastname.TabIndex = 24;
+            lblLastname.Text = "Last name";
             // 
-            // txtStudentname
+            // txtFirstname
             // 
-            txtStudentname.Location = new Point(183, 92);
-            txtStudentname.Name = "txtStudentname";
-            txtStudentname.Size = new Size(184, 29);
-            txtStudentname.TabIndex = 25;
+            txtFirstname.Location = new Point(183, 92);
+            txtFirstname.Name = "txtFirstname";
+            txtFirstname.Size = new Size(184, 29);
+            txtFirstname.TabIndex = 25;
             // 
             // txtRegno
             // 
-            txtRegno.Location = new Point(183, 156);
+            txtRegno.Location = new Point(183, 265);
             txtRegno.Name = "txtRegno";
             txtRegno.Size = new Size(184, 29);
             txtRegno.TabIndex = 26;
+            txtRegno.TextChanged += txtRegno_TextChanged;
             // 
             // cmbGrade
             // 
             cmbGrade.FormattingEnabled = true;
-            cmbGrade.Items.AddRange(new object[] { "A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D+", "D", "D-" });
-            cmbGrade.Location = new Point(183, 225);
+            cmbGrade.Items.AddRange(new object[] { "Student" });
+            cmbGrade.Location = new Point(183, 321);
             cmbGrade.Name = "cmbGrade";
             cmbGrade.Size = new Size(184, 30);
             cmbGrade.TabIndex = 27;
             // 
-            // txtFees
+            // txtLastname
             // 
-            txtFees.Location = new Point(183, 289);
-            txtFees.Name = "txtFees";
-            txtFees.Size = new Size(184, 29);
-            txtFees.TabIndex = 28;
+            txtLastname.Location = new Point(183, 154);
+            txtLastname.Name = "txtLastname";
+            txtLastname.Size = new Size(184, 29);
+            txtLastname.TabIndex = 28;
             // 
             // txtSearch
             // 
@@ -241,11 +244,29 @@
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = false;
             // 
+            // lblUsername
+            // 
+            lblUsername.AutoSize = true;
+            lblUsername.Location = new Point(16, 210);
+            lblUsername.Name = "lblUsername";
+            lblUsername.Size = new Size(98, 22);
+            lblUsername.TabIndex = 36;
+            lblUsername.Text = "Username";
+            // 
+            // txtUsername
+            // 
+            txtUsername.Location = new Point(183, 210);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(184, 29);
+            txtUsername.TabIndex = 37;
+            // 
             // CheckStudents
             // 
             AutoScaleDimensions = new SizeF(12F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1200, 473);
+            Controls.Add(txtUsername);
+            Controls.Add(lblUsername);
             Controls.Add(btnDelete);
             Controls.Add(btnClear);
             Controls.Add(btnUpdate);
@@ -253,14 +274,14 @@
             Controls.Add(dataGridCheckStudents);
             Controls.Add(txtSearch);
             Controls.Add(lblSearch);
-            Controls.Add(txtFees);
+            Controls.Add(txtLastname);
             Controls.Add(cmbGrade);
             Controls.Add(txtRegno);
-            Controls.Add(txtStudentname);
-            Controls.Add(lblFees);
-            Controls.Add(lblGrade);
+            Controls.Add(txtFirstname);
+            Controls.Add(lblLastname);
+            Controls.Add(lblRole);
             Controls.Add(lblRegno);
-            Controls.Add(lblStudentname);
+            Controls.Add(lblFirstname);
             Controls.Add(lblStudentsTitle);
             Controls.Add(pbClose);
             Controls.Add(menuStripStudents);
@@ -285,14 +306,14 @@
         private ToolStripMenuItem studentsToolStripMenuItem;
         private PictureBox pbClose;
         private Label lblStudentsTitle;
-        private Label lblStudentname;
+        private Label lblFirstname;
         private Label lblRegno;
-        private Label lblGrade;
-        private Label lblFees;
-        private TextBox txtStudentname;
+        private Label lblRole;
+        private Label lblLastname;
+        private TextBox txtFirstname;
         private TextBox txtRegno;
         private ComboBox cmbGrade;
-        private TextBox txtFees;
+        private TextBox txtLastname;
         private TextBox txtSearch;
         private Label lblSearch;
         private DataGridView dataGridCheckStudents;
@@ -300,5 +321,7 @@
         private Button btnClear;
         private Button btnUpdate;
         private Button btnAdd;
+        private Label lblUsername;
+        private TextBox txtUsername;
     }
 }
