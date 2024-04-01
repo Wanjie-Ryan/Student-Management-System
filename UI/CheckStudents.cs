@@ -18,7 +18,7 @@ namespace Student_Management_System.UI
         {
             InitializeComponent();
         }
-        CheckStudentsBLL cb =  new CheckStudentsBLL();
+        CheckStudentsBLL cb = new CheckStudentsBLL();
         CheckStudentsDAL cdal = new CheckStudentsDAL();
 
         private void pbClose_Click(object sender, EventArgs e)
@@ -41,6 +41,23 @@ namespace Student_Management_System.UI
         {
             DataTable dt = cdal.Select();
             dataGridCheckStudents.DataSource = dt;
+        }
+
+        private void dataGridCheckStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridCheckStudents_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int rows = e.RowIndex;
+            txtStudentID.Text = dataGridCheckStudents.Rows[rows].Cells[0].Value.ToString();
+            txtFirstname.Text = dataGridCheckStudents.Rows[rows].Cells[1].Value.ToString();
+            txtLastname.Text = dataGridCheckStudents.Rows[rows].Cells[4].Value.ToString();
+            txtUsername.Text = dataGridCheckStudents.Rows[rows].Cells[1].Value.ToString();
+            txtRegno.Text = dataGridCheckStudents.Rows[rows].Cells[4].Value.ToString();
+            cmbRole.Text = dataGridCheckStudents.Rows[rows].Cells[2].Value.ToString();
+
         }
     }
 }

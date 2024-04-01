@@ -40,7 +40,7 @@
             lblLastname = new Label();
             txtFirstname = new TextBox();
             txtRegno = new TextBox();
-            cmbGrade = new ComboBox();
+            cmbRole = new ComboBox();
             txtLastname = new TextBox();
             txtSearch = new TextBox();
             lblSearch = new Label();
@@ -153,14 +153,14 @@
             txtRegno.TabIndex = 26;
             txtRegno.TextChanged += txtRegno_TextChanged;
             // 
-            // cmbGrade
+            // cmbRole
             // 
-            cmbGrade.FormattingEnabled = true;
-            cmbGrade.Items.AddRange(new object[] { "Student" });
-            cmbGrade.Location = new Point(183, 321);
-            cmbGrade.Name = "cmbGrade";
-            cmbGrade.Size = new Size(184, 30);
-            cmbGrade.TabIndex = 27;
+            cmbRole.FormattingEnabled = true;
+            cmbRole.Items.AddRange(new object[] { "Student" });
+            cmbRole.Location = new Point(183, 321);
+            cmbRole.Name = "cmbRole";
+            cmbRole.Size = new Size(184, 30);
+            cmbRole.TabIndex = 27;
             // 
             // txtLastname
             // 
@@ -193,6 +193,8 @@
             dataGridCheckStudents.RowHeadersWidth = 51;
             dataGridCheckStudents.Size = new Size(576, 237);
             dataGridCheckStudents.TabIndex = 31;
+            dataGridCheckStudents.CellContentClick += dataGridCheckStudents_CellContentClick;
+            dataGridCheckStudents.RowHeaderMouseClick += dataGridCheckStudents_RowHeaderMouseClick;
             // 
             // btnDelete
             // 
@@ -297,7 +299,7 @@
             Controls.Add(txtSearch);
             Controls.Add(lblSearch);
             Controls.Add(txtLastname);
-            Controls.Add(cmbGrade);
+            Controls.Add(cmbRole);
             Controls.Add(txtRegno);
             Controls.Add(txtFirstname);
             Controls.Add(lblLastname);
@@ -335,7 +337,7 @@
         private Label lblLastname;
         private TextBox txtFirstname;
         private TextBox txtRegno;
-        private ComboBox cmbGrade;
+        private ComboBox cmbRole;
         private TextBox txtLastname;
         private TextBox txtSearch;
         private Label lblSearch;
