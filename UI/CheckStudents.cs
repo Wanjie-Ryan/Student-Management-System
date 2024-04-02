@@ -1,6 +1,4 @@
-﻿using Student_Management_System.Data_Layer;
-using Student_Management_System.Logics;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Student_Management_System.Data_Layer;
+using Student_Management_System.Logics;
 
 namespace Student_Management_System.UI
 {
@@ -18,6 +18,7 @@ namespace Student_Management_System.UI
         {
             InitializeComponent();
         }
+
         CheckStudentsBLL cb = new CheckStudentsBLL();
         CheckStudentsDAL cdal = new CheckStudentsDAL();
 
@@ -32,10 +33,7 @@ namespace Student_Management_System.UI
             teacherForm.Show();
         }
 
-        private void txtRegno_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        private void txtRegno_TextChanged(object sender, EventArgs e) { }
 
         private void CheckStudents_Load(object sender, EventArgs e)
         {
@@ -43,10 +41,10 @@ namespace Student_Management_System.UI
             dataGridCheckStudents.DataSource = dt;
         }
 
-        private void dataGridCheckStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        private void dataGridCheckStudents_CellContentClick(
+            object sender,
+            DataGridViewCellEventArgs e
+        ) { }
 
         public void Clear()
         {
@@ -58,7 +56,10 @@ namespace Student_Management_System.UI
             cmbRole.Text = "";
         }
 
-        private void dataGridCheckStudents_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void dataGridCheckStudents_RowHeaderMouseClick(
+            object sender,
+            DataGridViewCellMouseEventArgs e
+        )
         {
             int rows = e.RowIndex;
             txtStudentID.Text = dataGridCheckStudents.Rows[rows].Cells[0].Value.ToString();
@@ -67,7 +68,6 @@ namespace Student_Management_System.UI
             txtUsername.Text = dataGridCheckStudents.Rows[rows].Cells[1].Value.ToString();
             txtRegno.Text = dataGridCheckStudents.Rows[rows].Cells[4].Value.ToString();
             cmbRole.Text = dataGridCheckStudents.Rows[rows].Cells[2].Value.ToString();
-
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
