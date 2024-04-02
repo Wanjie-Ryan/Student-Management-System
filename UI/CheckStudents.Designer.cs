@@ -175,6 +175,7 @@
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(485, 29);
             txtSearch.TabIndex = 30;
+            txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // lblSearch
             // 
@@ -221,6 +222,7 @@
             btnClear.TabIndex = 34;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
             // 
             // btnUpdate
             // 

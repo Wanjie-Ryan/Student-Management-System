@@ -48,6 +48,16 @@ namespace Student_Management_System.UI
 
         }
 
+        public void Clear()
+        {
+            txtStudentID.Text = "";
+            txtFirstname.Text = "";
+            txtLastname.Text = "";
+            txtUsername.Text = "";
+            txtRegno.Text = "";
+            cmbRole.Text = "";
+        }
+
         private void dataGridCheckStudents_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int rows = e.RowIndex;
@@ -58,6 +68,27 @@ namespace Student_Management_System.UI
             txtRegno.Text = dataGridCheckStudents.Rows[rows].Cells[4].Value.ToString();
             cmbRole.Text = dataGridCheckStudents.Rows[rows].Cells[2].Value.ToString();
 
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = txtSearch.Text;
+
+            if (keyword != null)
+            {
+                DataTable dt = cdal.Search(keyword);
+                dataGridCheckStudents.DataSource = dt;
+            }
+            else
+            {
+                DataTable dt = cdal.Select();
+                dataGridCheckStudents.DataSource = dt;
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 }
